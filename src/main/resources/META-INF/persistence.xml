@@ -4,6 +4,8 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
+    <!--  persistence-unit은 여러개가 될 수 있음 -> 하나의 데이터베이스를 지칭, 여러 개의 DB를 사용할 수 있음 ex) 테스트 DB와 운영 DB -->
+    <!--  name은 데이터베이스 이름 -> 엔티티매니저팩토리에서 name에 해당하는윳을 들고와서 데이터베이스 접속 정보를 채워 넣게 됨  -->
     <persistence-unit name="spring_test" transaction-type="RESOURCE_LOCAL">
         <description>
             Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
@@ -18,10 +20,12 @@
             <property name="javax.persistence.jdbc.password" value="1234" />
 
             <!-- 하이버네이트 사용 시 다른 DB에서 MySQL 문법을 사용 가능하도록 변경.-->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
             <!-- 콘솔에 SQL 출력 여부 -->
             <property name="hibernate.show_sql" value="true" />
-<!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+
         </properties>
 
     </persistence-unit>
