@@ -27,6 +27,7 @@ public class Main {
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){
             tx.rollback();
+            e.printStackTrace();
         }finally {
             em.close();
         }
