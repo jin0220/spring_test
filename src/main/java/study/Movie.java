@@ -17,7 +17,7 @@ public class Movie {
     @Transient // 데이터베이스에 없는 필드지만 비즈니스 로직을 작성하기 위해서 필요한 필드를 만들기 위해서 사용
     private int raking;
 
-    
+
 
     @Override
     public String toString() {

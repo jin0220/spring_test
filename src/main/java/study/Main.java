@@ -20,10 +20,10 @@ public class Main {
             tx.begin();
 
             // 등록
-            Movie movie = new Movie();
-//            movie.setMovieId(1L);
-            movie.setMovieName("타이타닉");
-            em.persist(movie); // 영속성 컨텍스트라는 곳에 저장하는 것이지 엔티티의 내용을 DB에 저장하는 것은 아님
+//            Movie movie = new Movie();
+////            movie.setMovieId(1L);
+//            movie.setMovieName("타이타닉");
+//            em.persist(movie); // 영속성 컨텍스트라는 곳에 저장하는 것이지 엔티티의 내용을 DB에 저장하는 것은 아님
 
             // 조회
 //            Movie findMovie = em.find(Movie.class, 1L);
@@ -39,6 +39,30 @@ public class Main {
 //            Movie findMovie = em.find(Movie.class, 1L);
 //            System.out.println("findMovie = " + findMovie);
 //            em.remove(findMovie);
+
+            Item item1 = new Item();
+            item1.setName("치킨");
+
+            Item item2 = new Item();
+            item2.setName("치즈볼");
+
+            PurchaseOrder order = new PurchaseOrder();
+            order.setUserName("kim");
+            order.getItems().add(item1);
+            order.getItems().add(item2);
+
+            item1.setOrder(order);
+            item2.setOrder(order);
+
+            em.persist(order);
+            em.persist(item1);
+            em.persist(item2);
+
+            em.flush(); // find를 하기 위해 강제로 데이터베이스에 반영시키는 방법 -> commit()에서 데이터베이스에 반영되기 때문
+            em.clear(); // 위 영속성으로 관리되고 있는 엔티티를 제거하라는 의미
+
+            Item findItem = em.find(Item.class, 1L);
+            System.out.println("findItem.getOrder().getUserName() = " + findItem.getOrder().getUserName());
 
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){
