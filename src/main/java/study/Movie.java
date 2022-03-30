@@ -14,6 +14,14 @@ public class Movie {
     @Column(name = "NAME")
     private String movieName;
 
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "movieId=" + movieId +
+                ", movieName='" + movieName + '\'' +
+                '}';
+    }
+
     public Long getMovieId() {
         return movieId;
     }

@@ -9,7 +9,7 @@
             Persistence unit for the JPA tutorial of the Hibernate Getting Started Guide
         </description>
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>study.Movie</class>
+        <class>study.Movie</class> <!--gradle 빌드에서 엔티티 클래스를 자동으로 인식하지 못하는 경우 class를 추가-->
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

@@ -19,10 +19,26 @@ public class Main {
         try{
             tx.begin();
 
-            Movie movie = new Movie();
-            movie.setMovieId(1L);
-            movie.setMovieName("타이타닉");
-            em.persist(movie); // 영속성 컨텍스트라는 곳에 저장하는 것이지 엔티티의 내용을 DB에 저장하는 것은 아님
+            // 등록
+//            Movie movie = new Movie();
+//            movie.setMovieId(1L);
+//            movie.setMovieName("타이타닉");
+//            em.persist(movie); // 영속성 컨텍스트라는 곳에 저장하는 것이지 엔티티의 내용을 DB에 저장하는 것은 아님
+
+            // 조회
+//            Movie findMovie = em.find(Movie.class, 1L);
+//            System.out.println("findMovie = " + findMovie);
+
+            // 업데이트
+//            Movie findMovie = em.find(Movie.class, 1L);
+//            System.out.println("findMovie = " + findMovie);
+//            findMovie.setMovieName("로미오와 줄리엣"); //jpa 안에서 findMovie 엔티티가 관리되고 있기 때문에
+                                                    // setMovieName을 하게 되면 jpa가 알아서 update 쿼리를 날림.
+
+            // 삭제
+            Movie findMovie = em.find(Movie.class, 1L);
+            System.out.println("findMovie = " + findMovie);
+            em.remove(findMovie);
 
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){
