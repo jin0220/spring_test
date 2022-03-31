@@ -40,29 +40,53 @@ public class Main {
 //            System.out.println("findMovie = " + findMovie);
 //            em.remove(findMovie);
 
-            Item item1 = new Item();
-            item1.setName("치킨");
+//            Item item1 = new Item();
+//            item1.setName("치킨");
+//
+//            Item item2 = new Item();
+//            item2.setName("치즈볼");
+//
+//            PurchaseOrder order = new PurchaseOrder();
+//            order.setUserName("kim");
+//            order.getItems().add(item1);
+//            order.getItems().add(item2);
+//
+//            item1.setOrder(order);
+//            item2.setOrder(order);
+//
+//            em.persist(order);
+//            em.persist(item1);
+//            em.persist(item2);
+//
+//            em.flush(); // find를 하기 위해 강제로 데이터베이스에 반영시키는 방법 -> commit()에서 데이터베이스에 반영되기 때문
+//            em.clear(); // 위 영속성으로 관리되고 있는 엔티티를 제거하라는 의미
+//
+//            Item findItem = em.find(Item.class, 1L);
+//            System.out.println("findItem.getOrder().getUserName() = " + findItem.getOrder().getUserName());
 
-            Item item2 = new Item();
-            item2.setName("치즈볼");
+            // 일대일 연관관계
+//            Manuscript manuscript = new Manuscript();
+//            Book book = new Book();
+//
+//            book.setISBN("asdf");
+//            book.setManuscript(manuscript);
+//            manuscript.setBook(book);
+//
+//            em.persist(book);
+//            em.persist(manuscript);
 
-            PurchaseOrder order = new PurchaseOrder();
-            order.setUserName("kim");
-            order.getItems().add(item1);
-            order.getItems().add(item2);
+            Book2 book2 = new Book2();
+            book2.setTitle("어린왕자");
+            book2.setVersion(1);
+            book2.setPages(200);
 
-            item1.setOrder(order);
-            item2.setOrder(order);
+            BlogPost blogPost = new BlogPost();
+            blogPost.setTitle("어린왕자리뷰");
+            blogPost.setVersion(1);
+            blogPost.setUrl("http://littlePrince");
 
-            em.persist(order);
-            em.persist(item1);
-            em.persist(item2);
-
-            em.flush(); // find를 하기 위해 강제로 데이터베이스에 반영시키는 방법 -> commit()에서 데이터베이스에 반영되기 때문
-            em.clear(); // 위 영속성으로 관리되고 있는 엔티티를 제거하라는 의미
-
-            Item findItem = em.find(Item.class, 1L);
-            System.out.println("findItem.getOrder().getUserName() = " + findItem.getOrder().getUserName());
+            em.persist(book2);
+            em.persist(blogPost);
 
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){
