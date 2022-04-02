@@ -1,9 +1,7 @@
 package study;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args){
@@ -75,18 +73,67 @@ public class Main {
 //            em.persist(book);
 //            em.persist(manuscript);
 
-            Book2 book2 = new Book2();
-            book2.setTitle("어린왕자");
-            book2.setVersion(1);
-            book2.setPages(200);
+//            Book2 book2 = new Book2();
+//            book2.setTitle("어린왕자");
+//            book2.setVersion(1);
+//            book2.setPages(200);
+//
+//            BlogPost blogPost = new BlogPost();
+//            blogPost.setTitle("어린왕자리뷰");
+//            blogPost.setVersion(1);
+//            blogPost.setUrl("http://littlePrince");
+//
+//            em.persist(book2);
+//            em.persist(blogPost);
 
-            BlogPost blogPost = new BlogPost();
-            blogPost.setTitle("어린왕자리뷰");
-            blogPost.setVersion(1);
-            blogPost.setUrl("http://littlePrince");
+            // cascade
+            Address address1 = new Address();
+            address1.setCity("city1");
+            address1.setStreet("street1");
+            address1.setZipCode("zipcode1");
 
-            em.persist(book2);
-            em.persist(blogPost);
+            Address address2 = new Address();
+            address2.setCity("city2");
+            address2.setStreet("street2");
+            address2.setZipCode("zipcode2");
+
+            Person person = new Person();
+            person.setName("kim");
+            person.setAge(20);
+
+            // 연관관계 맺어주기
+            person.getAddresses().add(address1);
+            person.getAddresses().add(address2);
+
+            address1.setPerson(person);
+            address2.setPerson(person);
+
+            em.persist(person);
+
+            // cascade persist로 설정했기 때문에 지워도 실행됨.
+            em.persist(address1);
+            em.persist(address2);
+
+            em.flush();
+            em.clear();
+
+//            Person findPerson = em.find(Person.class,1);
+//            em.remove(findPerson);
+
+            // JPQL
+            // 1. TypedQuery
+//            TypedQuery<String> query = em.createQuery("SELECT p.name FROM Person AS p", String.class);
+//            List<String> resultList = query.getResultList();
+//            resultList.stream().forEach(v -> System.out.println("v = " + v));
+
+            // 2. Query
+            Query query = em.createQuery("SELECT p.name, p.age FROM Person AS p");
+            List resultList = query.getResultList();
+            for(Object o: resultList){
+                Object[] result = (Object[]) o;
+                System.out.println("result[0] = " + result[0]);
+                System.out.println("result[1] = " + result[1]);
+            }
 
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){

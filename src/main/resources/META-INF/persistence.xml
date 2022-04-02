@@ -18,6 +18,8 @@
         <class>study.Manuscript</class>
         <class>study.Book2</class>
         <class>study.BlogPost</class>
+        <class>study.Person</class>
+        <class>study.Address</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
