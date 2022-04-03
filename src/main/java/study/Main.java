@@ -1,5 +1,9 @@
 package study;
 
+import com.mysql.cj.QueryResult;
+import com.querydsl.core.QueryResults;
+import com.querydsl.jpa.impl.JPAQueryFactory;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -87,54 +91,97 @@ public class Main {
 //            em.persist(blogPost);
 
             // cascade
-            Address address1 = new Address();
-            address1.setCity("city1");
-            address1.setStreet("street1");
-            address1.setZipCode("zipcode1");
-
-            Address address2 = new Address();
-            address2.setCity("city2");
-            address2.setStreet("street2");
-            address2.setZipCode("zipcode2");
-
-            Person person = new Person();
-            person.setName("kim");
-            person.setAge(20);
-
-            // 연관관계 맺어주기
-            person.getAddresses().add(address1);
-            person.getAddresses().add(address2);
-
-            address1.setPerson(person);
-            address2.setPerson(person);
-
-            em.persist(person);
-
-            // cascade persist로 설정했기 때문에 지워도 실행됨.
-            em.persist(address1);
-            em.persist(address2);
-
-            em.flush();
-            em.clear();
+//            Address address1 = new Address();
+//            address1.setCity("city1");
+//            address1.setStreet("street1");
+//            address1.setZipCode("zipcode1");
+//
+//            Address address2 = new Address();
+//            address2.setCity("city2");
+//            address2.setStreet("street2");
+//            address2.setZipCode("zipcode2");
+//
+//            Person person = new Person();
+//            person.setName("kim");
+//            person.setAge(20);
+//
+//            // 연관관계 맺어주기
+//            person.getAddresses().add(address1);
+//            person.getAddresses().add(address2);
+//
+//            address1.setPerson(person);
+//            address2.setPerson(person);
+//
+//            em.persist(person);
+//
+//            // cascade persist로 설정했기 때문에 지워도 실행됨.
+//            em.persist(address1);
+//            em.persist(address2);
+//
+//            em.flush();
+//            em.clear();
 
 //            Person findPerson = em.find(Person.class,1);
 //            em.remove(findPerson);
 
             // JPQL
             // 1. TypedQuery
-//            TypedQuery<String> query = em.createQuery("SELECT p.name FROM Person AS p", String.class);
-//            List<String> resultList = query.getResultList();
+//            TypedQuery<Person> query = em.createQuery("SELECT distinct p FROM Person AS p JOIN FETCH p.addresses", Person.class);
+//            List<Person> resultList = query.getResultList();
 //            resultList.stream().forEach(v -> System.out.println("v = " + v));
 
             // 2. Query
-            Query query = em.createQuery("SELECT p.name, p.age FROM Person AS p");
-            List resultList = query.getResultList();
-            for(Object o: resultList){
-                Object[] result = (Object[]) o;
-                System.out.println("result[0] = " + result[0]);
-                System.out.println("result[1] = " + result[1]);
-            }
+//            Query query = em.createQuery("SELECT p.name, p.age FROM Person AS p");
+//            List resultList = query.getResultList();
+//            for(Object o: resultList){
+//                Object[] result = (Object[]) o;
+//                System.out.println("result[0] = " + result[0]);
+//                System.out.println("result[1] = " + result[1]);
+//            }
 
+            // querydsl
+            Address address1 = new Address("city1", "street1","zipcode1");
+            Address address2 = new Address("city2", "street2", "zipcode2");
+            Address address3 = new Address("city3", "street3", "zipcode3");
+
+            Person kim = new Person("kim", 20);
+            Person lee = new Person("lee", 30);
+            Person park = new Person("park", 25);
+            Person hong = new Person("hong", 15);
+
+            kim.addAddress(address1);
+            kim.addAddress(address2);
+            lee.addAddress(address3);
+
+            em.persist(kim);
+            em.persist(lee);
+            em.persist(park);
+            em.persist(hong);
+
+            em.flush();
+            em.clear();
+
+            // querydsl 활용
+            JPAQueryFactory query = new JPAQueryFactory(em);
+            QPerson person = new QPerson("p");
+            QAddress address = new QAddress("a");
+//            List<Person> persons = query.selectFrom(person)
+////                    .where(person.name.eq("kim"))
+////                    .where(person.name.contains("k"))
+//                    .innerJoin(person.addresses, address)
+//                    .fetch();
+            QueryResults<Person> results = query.selectFrom(person)
+                    .orderBy(person.age.asc())
+                    .offset(0).limit(2)
+                    .fetchResults();
+//            persons.stream().forEach((v -> System.out.println("v.getName() = " + v.getName())));
+//            System.out.println("persons.get(0).getAddresses().get(0).getCity() = " + persons.get(0).getAddresses().get(0).getCity());
+
+            long count = results.getTotal();
+            List<Person> fetchResult = results.getResults();
+            System.out.println("count = " + count);
+            fetchResult.stream().forEach(v -> System.out.println("v.getName() = " + v.getName()));
+            
             tx.commit(); // 여기서 DB에 전달할 모든 SQL을 모아서 한 번에 처리
         }catch (Exception e){
             tx.rollback();

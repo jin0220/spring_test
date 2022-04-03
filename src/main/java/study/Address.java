@@ -15,6 +15,15 @@ public class Address {
     @ManyToOne(fetch = FetchType.LAZY)
     private Person person;
 
+    public Address() {
+    }
+
+    public Address(String street, String city, String zipCode) {
+        this.street = street;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+
     public int getId() {
         return id;
     }
@@ -53,5 +62,11 @@ public class Address {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void addperson(Person person){
+        this.person = person;
+        // 양방향 연관관계
+        person.getAddresses().add(this);
     }
 }

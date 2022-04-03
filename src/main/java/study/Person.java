@@ -13,8 +13,16 @@ public class Person {
     private String name;
     private int age;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
     private List<Address> addresses = new ArrayList<>();
+
+    public Person() {
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public int getId() {
         return id;
@@ -48,13 +56,9 @@ public class Person {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", addresses=" + addresses +
-                '}';
+    public void addAddress(Address address){
+        this.addresses.add(address);
+        // 양방향 연관관계를 맺기
+        address.setPerson(this);
     }
 }

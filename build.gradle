@@ -1,9 +1,16 @@
 plugins {
     id 'java'
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10" // (1)
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
 repositories {
     mavenCentral()
@@ -12,13 +19,39 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+
     implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.6.1.Final'
-// https://mvnrepository.com/artifact/mysql/mysql-connector-java
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.27'
 
-}
+    // Querydsl jpa 라이브러리
+    implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '4.2.1'
+    // 쿼리타입(Q)을 생성할 때 필요한 라이브러리리
+    implementation group: 'com.querydsl', name: 'querydsl-apt', version: '4.1.4'
 
+//    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha5'
+    implementation group: 'org.slf4j', name: 'slf4j-api.jar', version: '1.7.30'
+    implementation "org.slf4j: slf4j-simple-1.6.1.jar"
+
+}
 test {
     useJUnitPlatform()
+}
+
+def querydslDir = "$buildDir/generated/querydsl" // (3)
+
+querydsl { // (4)
+    jpa = true
+    querydslSourcesDir = querydslDir
+}
+
+sourceSets { // (5)
+    main.java.srcDir querydslDir
+}
+
+configurations { // (6)
+    querydsl.extendsFrom compileClasspath
+}
+
+compileQuerydsl { // (7)
+    options.annotationProcessorPath = configurations.querydsl
 }
