@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="854f4e22-fd52-4383-98f6-e5a1a0fdbd64" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/classAnalysis.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/javaCompile.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.8/javaCompile/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/configuration-cache/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries-with-intellij-classes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/study/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/study/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QAddress.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QBlogPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QBook2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QManuscript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QMovie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QPublication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/generated/querydsl/study/QPurchaseOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileQuerydsl/source-classes-mapping.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Address.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/BlogPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Book2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Manuscript.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Movie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/Publication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/PurchaseOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QAddress.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QBlogPost.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QBook.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QBook2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QManuscript.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QMovie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QPerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QPublication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/study/QPurchaseOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/BlogPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Book2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Manuscript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Movie.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/Publication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/study/PurchaseOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/정리/JPQL.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/정리/상속관계.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/정리/어노테이션.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/정리/연관관계.md" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring_test" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring_test" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring_test" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="271IZEystQ5NVhONCgx93ZuoVgD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring&amp;jap_study" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="study" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.spring_test">
+    <configuration name="spring_test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="study.Main" />
+      <module name="spring_test.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="spring_test [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileJava" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="spring_test [compileQuerydsl]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileQuerydsl" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.spring_test [compileQuerydsl]" />
+        <item itemvalue="Gradle.spring_test [compileJava]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="854f4e22-fd52-4383-98f6-e5a1a0fdbd64" name="Default Changelist" comment="" />
+      <created>1648481220323</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648481220323</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
