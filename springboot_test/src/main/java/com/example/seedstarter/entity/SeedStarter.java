@@ -28,4 +28,15 @@ public class SeedStarter {
 
     @OneToMany(mappedBy = "seedStarter", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<Detail> details = new ArrayList<>();
+
+    // 연관관계 설정
+    public void setFeature(Feature feature){
+        this.features.add(feature);
+        feature.setSeedStarter(this); // 양방향 연관관계
+    }
+
+    public void setDetail(Detail detail){
+        this.details.add(detail);
+        detail.setSeedStarter(this);
+    }
 }

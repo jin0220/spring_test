@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Entity
 public class Detail {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="DETAIL_ID")
     private Long id;
 
     private int rowNum;
@@ -19,4 +20,9 @@ public class Detail {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SEED_STARTER_ID")
     private SeedStarter seedStarter;
+
+    public void setSeedStarter(SeedStarter seedStarter){
+        this.seedStarter = seedStarter;
+        seedStarter.getDetails().add(this);
+    }
 }
