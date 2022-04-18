@@ -1,5 +1,6 @@
 package com.example.seedstarter.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,6 +11,15 @@ import java.util.List;
 
 @Getter
 @Setter
+
+@NamedEntityGraphs({
+        @NamedEntityGraph( name="SeedStarter.withFeature", attributeNodes = {
+                @NamedAttributeNode("features") // 필드 이름
+        }),
+        @NamedEntityGraph( name="SeedStarter.withDetail", attributeNodes = {
+                @NamedAttributeNode("details")
+        })
+})
 @Entity
 public class SeedStarter {
     @Id
@@ -24,9 +34,11 @@ public class SeedStarter {
     private Type type;
 
     @OneToMany(mappedBy = "seedStarter", cascade = CascadeType.PERSIST, orphanRemoval = true) //orphanRemoval 부모가 사라지면 자식도 사라짐
+    @JsonManagedReference
     private List<Feature> features = new ArrayList<>();
 
     @OneToMany(mappedBy = "seedStarter", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @JsonManagedReference
     private List<Detail> details = new ArrayList<>();
 
     // 연관관계 설정
