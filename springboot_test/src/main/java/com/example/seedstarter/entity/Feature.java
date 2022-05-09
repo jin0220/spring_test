@@ -20,7 +20,7 @@ public class Feature {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SEED_STARTER_ID") // SeedStarter의 PK
-    @JsonBackReference
+    @JsonBackReference // 자식클래스
     private SeedStarter seedStarter;
 
     public void setSeedStarter(SeedStarter seedStarter) {

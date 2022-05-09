@@ -34,7 +34,7 @@ public class SeedStarter {
     private Type type;
 
     @OneToMany(mappedBy = "seedStarter", cascade = CascadeType.PERSIST, orphanRemoval = true) //orphanRemoval 부모가 사라지면 자식도 사라짐
-    @JsonManagedReference
+    @JsonManagedReference // 양방향 참조인 인스턴스를 json으로 변환하면 무한 재귀가 발생
     private List<Feature> features = new ArrayList<>();
 
     @OneToMany(mappedBy = "seedStarter", cascade = CascadeType.PERSIST, orphanRemoval = true)
