@@ -27,4 +27,22 @@ public class UserService {
     public User save(User user){
         return userRepository.save(user);
     }
+
+    // 회원 정보 수정
+    public void modify(String id, User user){
+        Optional<User> e = userRepository.findById(id);
+
+        if(e.isPresent()){
+            e.get().setId(user.getId());
+            e.get().setPassword(user.getPassword());
+            e.get().setEmail(user.getEmail());
+            e.get().setProfileImage(user.getProfileImage());
+            userRepository.save(user);
+        }
+    }
+
+    // 회원 정보 삭제
+    public void delete(String id){
+        userRepository.deleteById(id);
+    }
 }
